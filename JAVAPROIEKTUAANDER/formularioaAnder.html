@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularioa</title>
-   
+    
 <body>
     <div class="container">
         <label for="izen">Izen osoa:</label>
@@ -13,15 +13,28 @@
         <label for="email">Emaila:</label>
         <input type="email" id="email" placeholder="Sartazu zure posta elektronikoa">
         
-        <button>Onartu</button>
+        <button onclick="onartu()">Onartu</button>
         
         <label>Generoa:</label>
         <div class="radio-group">
-            <label><input type="radio" name="generoa"> Gizonezkoa</label>
-            <label><input type="radio" name="generoa"> Emakumezkoa</label>
-            <label><input type="radio" name="generoa"> Beste bat</label>
+            <label><input type="radio" name="generoa" value="Gizonezkoa"> Gizonezkoa</label>
+            <label><input type="radio" name="generoa" value="Emakumezkoa"> Emakumezkoa</label>
+            <label><input type="radio" name="generoa" value="Beste bat"> Beste bat</label>
         </div>
-  
+        
+        <label for="herrialdea">Estatua:</label>
+        <select id="herrialdea">
+            <option value="">Aukeratu zure herrialdea</option>
+            <option value="EH">Euskal Herria</option>
+            <option value="US">Estatu Batuak</option>
+            <option value="FR">Frantzia</option>
+            <option value="DE">Alemania</option>
+            <option value="AT">Austria</option>
+        </select>
+        
+        <button onclick="bidali()">Bidali</button>
     </div>
+
+   
 </body>
 </html>
