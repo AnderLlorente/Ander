@@ -4,7 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularioa</title>
-    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 40%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #bbb;
+        }
+        .radio-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
 <body>
     <div class="container">
         <label for="izen">Izen osoa:</label>
@@ -17,9 +61,9 @@
         
         <label>Generoa:</label>
         <div class="radio-group">
-            <label><input type="radio" name="generoa" value="Gizonezkoa"> Gizonezkoa</label>
-            <label><input type="radio" name="generoa" value="Emakumezkoa"> Emakumezkoa</label>
-            <label><input type="radio" name="generoa" value="Beste bat"> Beste bat</label>
+            <label><input type="radio" name="generoa" value="Gizonezkoa">Gizonezkoa</label>
+            <label><input type="radio" name="generoa" value="Emakumezkoa">Emakumezkoa</label>
+            <label><input type="radio" name="generoa" value="Beste bat">Beste bat</label>
         </div>
         
         <label for="herrialdea">Estatua:</label>
@@ -34,7 +78,5 @@
         
         <button onclick="bidali()">Bidali</button>
     </div>
-
-   
 </body>
 </html>
