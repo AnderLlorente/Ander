@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizatzailea</title>
+
+<body>
+    <div class="container">
+        <h1>Ongi etorria pertsonalizatzaileara</h1>
+        <p id="text">Paragrafo honen estiloa alda dezakezu.</p>
+        <p>Klik egin pertsonalizatzeko.</p>
+        
+        <div class="personalizer">
+            <p>atzeko_kolorea</p>
+            <div class="color-options">
+                <div style="background: pink;" onclick="changeBackground('pink')"></div>
+                <div style="background: lightgreen;" onclick="changeBackground('lightgreen')"></div>
+                <div style="background: lightblue;" onclick="changeBackground('lightblue')"></div>
+                <div style="background: gray;" onclick="changeBackground('gray')"></div>
+            </div>
+            <p>aldatu_letrak</p>
+            <div class="color-options">
+                <div style="background: red;" onclick="changeTextColor('red')"></div>
+                <div style="background: green;" onclick="changeTextColor('green')"></div>
+                <div style="background: blue;" onclick="changeTextColor('blue')"></div>
+                <div style="background: black;" onclick="changeTextColor('black')"></div>
+            </div>
+            <div class="size-options">
+                <button onclick="changeFontSize('12px')">XS</button>
+                <button onclick="changeFontSize('16px')">S</button>
+                <button onclick="changeFontSize('20px')">M</button>
+                <button onclick="changeFontSize('24px')">L</button>
+                <button onclick="changeFontSize('28px')">XL</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
