@@ -4,36 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personalizatzailea</title>
-
-<body>
-    <div class="container">
-        <h1>Ongi etorria pertsonalizatzaileara</h1>
-        <p id="text">Paragrafo honen estiloa alda dezakezu.</p>
-        <p>Klik egin pertsonalizatzeko.</p>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
         
-        <div class="personalizer">
+        .pertsonalizatu {
+            margin-top: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: fit-content;
+        }
+        .color-options, .size-options {
+            display: flex;
+            gap: 5px;
+        }
+        .color-options div, .size-options button {
+            width: 25px;
+            height: 25px;
+            border: 1px solid #000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .color-options div:hover, .size-options button:hover {
+            opacity: 0.7;
+        }
+
+        .testuak{
+            text-align: left;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Pertsonalizatzailea</a>
+        <a href="#">Formularioa</a>
+        <a href="#">Irudiak</a>
+        <a href="#">Modua</a>
+    </div>
+        <div class="testuak">
+        <h1>Ongi etorria pertsonalizatzaileara</h1>
+        <p >Paragrafo honen estiloa alda dezakezu.</p>
+        <p>Klik egin pertsonalizatzeko.</p>
+        </div>
+        <div class="pertsonalizatu">
             <p>atzeko_kolorea</p>
             <div class="color-options">
-                <div style="background: pink;" onclick="changeBackground('pink')"></div>
-                <div style="background: lightgreen;" onclick="changeBackground('lightgreen')"></div>
-                <div style="background: lightblue;" onclick="changeBackground('lightblue')"></div>
-                <div style="background: gray;" onclick="changeBackground('gray')"></div>
+                <div style="background: pink;" onclick="aldatufondoa('pink')"></div>
+                <div style="background: lightgreen;" onclick="aldatufondoa('lightgreen')"></div>
+                <div style="background: lightblue;" onclick="aldatufondoa('lightblue')"></div>
+                <div style="background: gray;" onclick="aldatufondoa('gray')"></div>
             </div>
             <p>aldatu_letrak</p>
             <div class="color-options">
-                <div style="background: red;" onclick="changeTextColor('red')"></div>
-                <div style="background: green;" onclick="changeTextColor('green')"></div>
-                <div style="background: blue;" onclick="changeTextColor('blue')"></div>
-                <div style="background: black;" onclick="changeTextColor('black')"></div>
+                <div style="background: red;" onclick="aldatutestukolorea1('red')"></div>
+                <div style="background: green;" onclick="aldatutestukolorea2('green')"></div>
+                <div style="background: blue;" onclick="aldatutestukolorea3('blue')"></div>
+                <div style="background: black;" onclick="aldatutestukolorea4('black')"></div>
             </div>
-            <div class="size-options">
-                <button onclick="changeFontSize('12px')">XS</button>
-                <button onclick="changeFontSize('16px')">S</button>
-                <button onclick="changeFontSize('20px')">M</button>
-                <button onclick="changeFontSize('24px')">L</button>
-                <button onclick="changeFontSize('28px')">XL</button>
+            <div class="tamainak">
+                <button class="tamainak" onclick="aldatutamaina1()">XS</button>
+                <button class="tamainak" onclick="aldatutamaina2()">S</button>
+                <button class="tamainak" onclick="aldatutamaina3()">M</button>
+                <button class="tamainak" onclick="aldatutamaina4()">L</button>
+                <button class="tamainak" onclick="aldatutamaina5()">XL</button>
             </div>
         </div>
     </div>
+
+    <script>
+        function aldatufondoa(color) {
+            document.body.style.background = color;
+        }
+        function aldatutestukolorea(color) {
+            document.getElementById('text').style.color = color;
+        }
+        function aldatutamaina(size) {
+            document.getElementById('text').style.fontSize = size;
+        }
+        function aldatutestukolorea1() {
+            document.getElementsByClassName("testuak")[0].style.color = "red";
+        }
+        function aldatutestukolorea2() {
+            document.getElementsByClassName("testuak")[0].style.color = "green";
+        }
+        function aldatutestukolorea3() {
+            document.getElementsByClassName("testuak")[0].style.color = "blue";
+        }
+        function aldatutestukolorea4() {
+            document.getElementsByClassName("testuak")[0].style.color = "black";
+        }
+        function aldatutamaina1() {
+        document.getElementsByTagName("testuak").style.fontSize = "12px";
+        }
+        function aldatutamaina2() {
+        document.getElementsByTagName("testuak").style.fontSize = "16px";
+        }
+        function aldatutamaina3() {
+        document.getElementsByTagName("testuak").style.fontSize = "20px";
+        }
+        function aldatutamaina4() {
+        document.getElementsByTagName("testuak").style.fontSize = "24px";
+        }
+        function aldatutamaina5() {
+        document.getElementsByTagName("h1").style.fontSize = "28px";
+        document.getElementsByTagName("p").style.fontSize = "28px";
+
+        }
+    </script>
 </body>
 </html>
