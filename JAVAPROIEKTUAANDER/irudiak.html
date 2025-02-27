@@ -27,9 +27,13 @@
         nav a:hover {
             text-decoration: none;
         }
+        img {
+            width: 100px;
+            height: 100px;
+        }
        
     </style>
-<body>
+<body onload="loop()">
     <nav>
         <a href="Pertsonalizatu.html">Pertsonalizatzailea</a>
         <a href="formularioaAnder.html">Formularioa</a>
@@ -44,6 +48,52 @@
         <h2>Automatikoki kargatzea</h2>
         <p><img id="ausazkoa" alt="ausazko irudia"></p>
       </div>
+      <script>
+        function modua(){
+    if(document.getElementsByClassName("m_botoia")[0].textContent.includes("Modua")){
+        document.getElementsByClassName("m_botoia")[0].textContent = "fondo beltza";
+        document.body.style.color = "white";
+        document.body.style.backgroundColor = "black";
+        document.getElementsByClassName("lehenegoirudia")[0].style.backgroundColor = "#444";
+        document.getElementsByClassName("bigarrenirudia")[0].style.backgroundColor = "#444";
+    } else if ((document.getElementsByClassName("m_botoia")[0].textContent.includes("fondo txuria"))){
+        document.body.style.backgroundColor = "black";
+        document.getElementsByClassName("lehenegoirudia")[0].style.backgroundColor = "#444";
+        document.getElementsByClassName("bigarrenirudia")[0].style.backgroundColor = "#444";
+        document.getElementsByClassName("m_botoia")[0].textContent = "fondo beltza";
+        document.body.style.color = "white";
+    } else {
+        document.getElementsByClassName("m_botoia")[0].textContent = "fondo txuria";
+        document.getElementsByClassName("lehenegoirudia")[0].style.backgroundColor = "white";
+        document.getElementsByClassName("bigarrenirudia")[0].style.backgroundColor = "white";
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+    }
+}
+
+    function zenbakia(n){
+    return(Math.floor(Math.random() * n + 1 ));
+}
+
+var irudia = new Array();
+irudia[0] = "img/js_logo.png";
+irudia[1] = "img/html_logo.png";
+irudia[2] = "img/css_logo.png";
+irudia[3] = "img/js.jpg";
+irudia[4] = "img/css_gif.gif";
+
+
+function aukeratu_irudia(){
+    document.getElementById("aukeratuta").src = irudia[zenbakia(5)-1];
+}
+
+function loop() {
+    document.getElementById("ausazkoa").src = irudia[zenbakia(5)-1];
+    setTimeout(loop, 100);
+}
+
+
+</script>
       
 </body>
 </html>
