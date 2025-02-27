@@ -80,9 +80,10 @@
         <input type="text" id="izen" placeholder="Sartazu zure izen osoa">
         
         <label for="email">Emaila:</label>
-        <input type="email" id="email" placeholder="Sartazu zure posta elektronikoa">
+        <input type="email" id="emaila" placeholder="Sartazu zure posta elektronikoa">
+        <p id="testua"></p>
         
-        <button onclick="onartu()">Onartu</button>
+        <button onclick="konprobaketa()">Onartu</button>
         
         <label>Generoa:</label>
         <div class="radio-group">
@@ -107,13 +108,18 @@
         function konprobaketa(event) {
             event.preventDefault();
             const emaila = document.getElementById("emaila").value;
-            const emaitza = document.getElementById("onartu");
+            const emaitza = document.getElementById("testua");
 
             if (emaila.includes("@"))  {
                 emaitza.textContent = "Emaila Egokia da!";
                 emaitza.style.color = "green";
+            } else {
+                emaitza.textContent = "Errorea: Emailak '@' izan behar du.";
+                emaitza.style.color = "red";
             }
         }
+
+        document.getElementById("konprobaketa").addEventListener("click", konprobaketa);
     </script>
 </body>
 </html>
